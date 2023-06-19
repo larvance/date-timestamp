@@ -1,0 +1,65 @@
+<html>
+<head>
+    <title>Date to Timestamp</title>
+</head>
+<body>
+<div class="usage">
+    <h1>Date to timestamp</h1>
+    Select a date to see its timestamp
+</div>
+<div class="container">
+    <div class="item">
+        <input id="in-1" type="datetime-local">
+        <div id="out-1"></div>
+    </div>
+    <div class="item">
+        <input id="in-2" type="date">
+        <div id="out-2"></div>
+    </div>
+</div>
+</body>
+<script>
+    const _ = s => document.querySelector(s);
+    for (let i = 1; i <= 2; i++)
+        _("#in-" + i).addEventListener("change", e => _("#out-" + i).innerHTML = (new Date(e.target.value) * 1) + "");
+</script>
+<style>
+    body {
+        background: #36393F;
+        font-family: Calibri, serif;
+        color: white;
+    }
+
+    .container {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        translate: -50% -50%;
+        display: flex;
+    }
+
+    .container > .item {
+        margin: 10px;
+        padding: 10px;
+        text-align: center;
+    }
+
+    input {
+        background: #5c616c;
+        outline: none;
+        border: none;
+        color: white;
+        border-radius: 10px;
+        padding: 5px;
+    }
+
+    .usage {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        translate: -50% -50%;
+        margin-top: -100px;
+        text-align: center;
+    }
+</style>
+</html>
